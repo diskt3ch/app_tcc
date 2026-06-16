@@ -20,7 +20,7 @@ export default function AdminLogin({ onLoginSuccess, onBack }) {
     <main className="min-h-screen bg-background flex flex-col items-center justify-center p-md">
       <div className="bg-surface border border-surface-container-high rounded-2xl shadow-xl w-full max-w-md p-lg flex flex-col gap-md animate-in fade-in zoom-in-95 duration-200">
         
-        {/* Header */}
+        {/* topo do login */}
         <div className="text-center">
           <div className="w-16 h-16 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center mx-auto mb-sm">
             <span className="material-symbols-outlined text-[36px]">lock</span>
@@ -29,7 +29,7 @@ export default function AdminLogin({ onLoginSuccess, onBack }) {
           <p className="font-body-md text-on-surface-variant text-sm mt-xs">Identifique-se para acessar o painel de operações</p>
         </div>
 
-        {/* Form */}
+        {/* formulario de login */}
         <form onSubmit={handleSubmit} className="flex flex-col gap-md">
           {error && (
             <div className="bg-error/10 border border-error/20 text-error p-sm rounded-lg text-sm flex items-center gap-xs">
@@ -71,7 +71,7 @@ export default function AdminLogin({ onLoginSuccess, onBack }) {
           </button>
         </form>
 
-        {/* Back Link */}
+        {/* link de voltar */}
         <button
           onClick={onBack}
           className="text-xs font-headline-md text-on-surface-variant hover:text-primary transition-colors flex items-center gap-xs justify-center mt-sm"

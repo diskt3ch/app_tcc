@@ -1,14 +1,14 @@
 import React, { useState } from 'react';
 
 export default function CustomerCheckout({ cart, deliveryDetails, onBack, onPlaceOrder }) {
-  const [checkoutStep, setCheckoutStep] = useState('summary'); // 'summary' | 'pix_screen'
+  const [checkoutStep, setCheckoutStep] = useState('summary'); // tela atual
   const [isCopied, setIsCopied] = useState(false);
   const [isProcessing, setIsProcessing] = useState(false);
   const totalCart = cart.reduce((acc, item) => acc + item.preco_base, 0);
 
   const handlePayment = () => {
     setIsProcessing(true);
-    // Simula tempo de processamento da tela de PIX antes de enviar pro servidor
+    // espera um pouco pra simular que ta processando
     setTimeout(() => {
       onPlaceOrder('PIX');
     }, 1500);
@@ -30,7 +30,7 @@ export default function CustomerCheckout({ cart, deliveryDetails, onBack, onPlac
 
   return (
     <main className="flex-grow flex flex-col h-screen overflow-hidden bg-surface-container-lowest">
-      <div className="bg-surface dark:bg-surface-dim w-full top-0 sticky shadow-sm z-20 flex-shrink-0">
+      <div className="bg-surface w-full top-0 sticky shadow-sm z-20 flex-shrink-0"> {/* header */}
         <div className="flex items-center px-md py-sm gap-sm">
           <button 
             onClick={handleBackClick} 
@@ -47,7 +47,7 @@ export default function CustomerCheckout({ cart, deliveryDetails, onBack, onPlac
 
       {checkoutStep === 'summary' ? (
         <div className="flex-grow overflow-y-auto p-md max-w-4xl mx-auto w-full">
-          {/* Delivery / Pickup Preferences */}
+          {/* info de entrega se tiver */}
           {deliveryDetails && (
             <>
               <h2 className="font-headline-md text-lg text-on-background mb-4">Opção de Entrega / Consumo</h2>
@@ -123,7 +123,7 @@ export default function CustomerCheckout({ cart, deliveryDetails, onBack, onPlac
               <p className="text-sm text-on-surface-variant mt-1">Escaneie o QR Code abaixo com o app do seu banco</p>
             </div>
 
-            {/* SVG QR Code */}
+            {/* qr code feito em svg na mao */}
             <div className="py-2">
               <svg viewBox="0 0 100 100" className="w-48 h-48 mx-auto bg-white p-3 rounded-xl border border-surface-container-high shadow-sm">
                 <rect x="5" y="5" width="25" height="25" fill="#a63500" rx="3" />

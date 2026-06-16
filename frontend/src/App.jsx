@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import CustomerMenu from './components/CustomerMenu';
 import CustomerCheckout from './components/CustomerCheckout';
 import AdminDashboard from './components/AdminDashboard';
@@ -12,12 +12,12 @@ function App() {
   const [orders, setOrders] = useState([]);
   const [deliveryDetails, setDeliveryDetails] = useState(null);
 
-  // Adiciona ao carrinho
+  // add no carrinho
   const addToCart = (product) => {
     setCart([...cart, product]);
   };
 
-  // Finaliza pedido (Mock do Webhook)
+  // monta o pedido e faz o mock do pagamento
   const placeOrder = (paymentMethod) => {
     const newOrder = {
       id: Math.floor(Math.random() * 10000),
@@ -32,10 +32,10 @@ function App() {
     };
     
     setOrders([newOrder, ...orders]);
-    setCart([]); // Limpa o carrinho
+    setCart([]);
     setCurrentScreen('checkout_success');
 
-    // Simula o Webhook de pagamento desacoplado após 5 segundos
+    // depois de 5s finge que o banco aprovou o pix
     setTimeout(() => {
       setOrders(currentOrders => 
         currentOrders.map(o => 
@@ -62,7 +62,7 @@ function App() {
 
   return (
     <div className="bg-background text-on-background font-body-lg min-h-screen flex flex-col relative">
-      {/* Botão flutuante para acessar o painel Admin */}
+      {/* botao pra ir pro admin */}
       {currentScreen !== 'admin' && (
         <button 
           onClick={() => setCurrentScreen('admin_login')}

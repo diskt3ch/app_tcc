@@ -4,7 +4,7 @@ import { MOCK_PRODUCTS } from '../data/mockData';
 export default function CustomerMenu({ selectedUnit, onBack, cart, addToCart, onCheckout }) {
   const totalCart = cart.reduce((acc, item) => acc + item.preco_base, 0);
 
-  // Modal States
+  // estados do modal de preferencias
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [modalOption, setModalOption] = useState('local'); // 'local', 'retirada', 'entrega'
   const [nomeCliente, setNomeCliente] = useState('');
@@ -37,7 +37,7 @@ export default function CustomerMenu({ selectedUnit, onBack, cart, addToCart, on
       },
       (error) => {
         console.error(error);
-        // Fallback gracioso solicitado
+        // se der erro no gps usa um endereco fake pra testar
         setEndereco('Av. Boa Viagem, 1200 - Recife (Localização Simulado por GPS)');
         setIsLocating(false);
       },
@@ -70,7 +70,7 @@ export default function CustomerMenu({ selectedUnit, onBack, cart, addToCart, on
       }
     }
 
-    // Pass preferences back to checkout
+    // manda os dados pro checkout
     onCheckout({
       tipo: modalOption,
       nome: nomeCliente,
@@ -83,8 +83,8 @@ export default function CustomerMenu({ selectedUnit, onBack, cart, addToCart, on
   };
 
   return (
-    <main className="flex-grow flex flex-col h-screen overflow-hidden bg-background">
-      <div className="bg-surface dark:bg-surface-dim w-full top-0 sticky shadow-sm z-20 flex-shrink-0">
+    <main className="flex-grow flex flex-col h-screen overflow-hidden bg-background"> {/* tela principal do cardapio */}
+      <div className="bg-surface w-full top-0 sticky shadow-sm z-20 flex-shrink-0">
         <div className="flex items-center px-md py-sm gap-sm justify-between">
           <div className="flex items-center gap-sm">
             <button onClick={onBack} className="w-10 h-10 rounded-full flex items-center justify-center hover:bg-surface-container-highest transition-colors">
@@ -148,11 +148,11 @@ export default function CustomerMenu({ selectedUnit, onBack, cart, addToCart, on
         </div>
       )}
 
-      {/* Modal de Preferências do Pedido */}
+      {/* modal que pergunta se é entrega, retirada ou local */}
       {isModalOpen && (
         <div className="fixed inset-0 bg-black/40 backdrop-blur-sm z-[200] flex items-center justify-center p-md">
           <div className="bg-surface border border-surface-container-high rounded-2xl shadow-xl w-full max-w-lg overflow-hidden flex flex-col animate-in fade-in zoom-in-95 duration-200">
-            {/* Header */}
+            {/* titulo do modal */}
             <div className="px-md py-sm bg-surface-container-low border-b border-surface-container-high flex justify-between items-center">
               <h3 className="font-headline-md text-primary text-lg flex items-center gap-xs">
                 <span className="material-symbols-outlined">restaurant_menu</span> Preferências do Pedido
@@ -165,7 +165,7 @@ export default function CustomerMenu({ selectedUnit, onBack, cart, addToCart, on
               </button>
             </div>
 
-            {/* Form */}
+            {/* formulario */}
             <form onSubmit={handleModalSubmit} className="p-md flex flex-col gap-md overflow-y-auto max-h-[80vh]">
               {formError && (
                 <div className="bg-error/10 border border-error/20 text-error p-sm rounded-lg text-sm flex items-center gap-xs">
@@ -174,7 +174,7 @@ export default function CustomerMenu({ selectedUnit, onBack, cart, addToCart, on
                 </div>
               )}
 
-              {/* Tabs para Tipo de Entrega */}
+              {/* tabs pra escolher o tipo */}
               <div>
                 <label className="text-xs font-bold text-on-surface-variant uppercase tracking-wider block mb-sm">Como deseja receber?</label>
                 <div className="grid grid-cols-3 gap-xs bg-surface-container-low p-xs rounded-xl border border-surface-container-high mb-sm">
@@ -207,7 +207,7 @@ export default function CustomerMenu({ selectedUnit, onBack, cart, addToCart, on
                   </button>
                 </div>
 
-                {/* Tempo Estimado Info Alert */}
+                {/* mostra o tempo estimado pro cliente */}
                 <div className="bg-primary/5 text-primary border border-primary/10 rounded-lg px-sm py-2 text-xs flex items-center gap-xs animate-in duration-200">
                   <span className="material-symbols-outlined text-[16px]">schedule</span>
                   <span>
@@ -218,7 +218,7 @@ export default function CustomerMenu({ selectedUnit, onBack, cart, addToCart, on
                 </div>
               </div>
 
-              {/* Nome do Cliente */}
+              {/* campo do nome */}
               <div>
                 <label htmlFor="nomeCliente" className="text-xs font-bold text-on-surface-variant uppercase tracking-wider block mb-xs">Nome do Cliente</label>
                 <input
@@ -231,7 +231,7 @@ export default function CustomerMenu({ selectedUnit, onBack, cart, addToCart, on
                 />
               </div>
 
-              {/* Se for Entrega */}
+              {/* campos extras se for entrega */}
               {modalOption === 'entrega' && (
                 <>
                   <div>
@@ -271,7 +271,7 @@ export default function CustomerMenu({ selectedUnit, onBack, cart, addToCart, on
                 </>
               )}
 
-              {/* Se for Local ou Retirada */}
+              {/* opcao de agendar se nao for entrega */}
               {modalOption !== 'entrega' && (
                 <div className="bg-surface-container-low p-sm rounded-xl border border-surface-container-high">
                   <label className="flex items-center gap-sm cursor-pointer select-none">
@@ -302,7 +302,7 @@ export default function CustomerMenu({ selectedUnit, onBack, cart, addToCart, on
                 </div>
               )}
 
-              {/* Botões do Modal */}
+              {/* botoes cancelar/confirmar */}
               <div className="border-t border-surface-container-high pt-md mt-sm flex gap-sm justify-end">
                 <button
                   type="button"

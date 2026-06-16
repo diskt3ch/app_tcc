@@ -3,7 +3,7 @@ import React from 'react';
 export default function AdminDashboard({ orders, onBack }) {
   return (
     <main className="min-h-screen bg-background text-on-background font-body-md flex flex-col">
-      {/* Navbar Design Clean e Moderno */}
+      {/* barra de cima do admin */}
       <header className="bg-surface border-b border-surface-container-high px-6 py-4 flex justify-between items-center sticky top-0 z-50 shadow-sm">
         <div className="flex items-center gap-4">
           <button onClick={onBack} className="w-10 h-10 rounded-full flex items-center justify-center hover:bg-surface-container-highest transition-colors">
@@ -24,9 +24,9 @@ export default function AdminDashboard({ orders, onBack }) {
         </div>
       </header>
 
-      {/* Content */}
+      {/* conteudo principal */}
       <div className="flex-grow p-6 max-w-7xl mx-auto w-full">
-        {/* KPI Cards */}
+        {/* cards com os numeros */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
           <div className="bg-surface border border-surface-container-high p-5 rounded-xl shadow-sm border-l-4 border-l-primary flex items-center justify-between">
              <div>
@@ -55,7 +55,7 @@ export default function AdminDashboard({ orders, onBack }) {
           </div>
         </div>
 
-        {/* Orders List */}
+        {/* lista dos pedidos */}
         <div>
           <h2 className="text-lg font-headline-md mb-4 text-on-surface border-b border-surface-container-high pb-2">Fila de Pedidos (Atualização em Tempo Real)</h2>
           

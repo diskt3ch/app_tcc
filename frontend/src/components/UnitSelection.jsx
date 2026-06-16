@@ -3,7 +3,7 @@ import React from 'react';
 export default function UnitSelection({ selectedUnit, setSelectedUnit, onContinue }) {
   return (
     <main className="flex-grow flex flex-col md:flex-row h-screen max-h-screen overflow-hidden">
-      {/* Left Side: Map View (Visual) */}
+      {/* lado esquerdo: mapa de recife */}
       <div className="hidden md:block w-2/3 h-full bg-surface-variant relative">
         <div 
           className="absolute inset-0 bg-cover bg-center" 
@@ -36,15 +36,15 @@ export default function UnitSelection({ selectedUnit, setSelectedUnit, onContinu
         </div>
       </div>
 
-      {/* Right Side: Unit List */}
+      {/* lado direito: lista das unidades */}
       <div className="w-full md:w-1/3 h-full bg-surface-container-lowest flex flex-col shadow-[-4px_0_20px_-5px_rgba(166,53,0,0.1)] z-10 relative">
-        <div className="bg-surface dark:bg-surface-dim w-full top-0 sticky shadow-[0_4px_20px_-5px_rgba(166,53,0,0.1)] z-20">
+        <div className="bg-surface w-full top-0 sticky shadow-[0_4px_20px_-5px_rgba(166,53,0,0.1)] z-20">
           <div className="flex items-center justify-between px-md py-sm w-full">
             <div className="flex items-center gap-sm">
               <div className="w-10 h-10 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center">
                 <span className="material-symbols-outlined text-[24px]">map</span>
               </div>
-              <h1 className="font-headline-md text-headline-md text-primary dark:text-primary-fixed-dim">Raízes do Nordeste</h1>
+              <h1 className="font-headline-md text-headline-md text-primary">Raízes do Nordeste</h1>
             </div>
           </div>
         </div>

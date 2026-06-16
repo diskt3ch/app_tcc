@@ -1,0 +1,21 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // Regras básicas: Apenas usuários autenticados podem ler
+    match /{document=**} {
+      allow read: if request.auth != null;
+      allow write: if request.auth != null;
+    }
+    
+    // Regras específicas do TCC
+    match /unidades/{unidadeId} {
+      allow read: if true; // Cardápio é público
+    }
+    
+    match /produtos/{produtoId} {
+      allow read: if true; // Produtos são públicos
+    }
+  }
+}

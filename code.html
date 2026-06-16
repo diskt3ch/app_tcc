@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Raízes do Nordeste - Seleção de Unidade</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;700&amp;family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&amp;family=JetBrains+Mono:wght@500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "primary-fixed-dim": "#ffb59c",
+                      "outline-variant": "#e2bfb4",
+                      "on-primary-fixed": "#390c00",
+                      "error": "#ba1a1a",
+                      "on-primary": "#ffffff",
+                      "primary-fixed": "#ffdbcf",
+                      "on-error": "#ffffff",
+                      "surface-container-highest": "#e5e2e1",
+                      "tertiary-container": "#ae602d",
+                      "background": "#fcf9f8",
+                      "primary": "#a63500",
+                      "on-secondary-fixed-variant": "#5e4200",
+                      "on-background": "#1c1b1b",
+                      "inverse-surface": "#313030",
+                      "on-surface": "#1c1b1b",
+                      "on-primary-fixed-variant": "#822800",
+                      "secondary": "#7c5800",
+                      "primary-container": "#d04501",
+                      "on-secondary": "#ffffff",
+                      "on-tertiary-fixed-variant": "#753401",
+                      "surface-container": "#f0edec",
+                      "outline": "#8e7067",
+                      "on-secondary-container": "#6b4b00",
+                      "inverse-primary": "#ffb59c",
+                      "tertiary-fixed-dim": "#ffb68c",
+                      "on-tertiary-fixed": "#321200",
+                      "secondary-fixed-dim": "#ffba20",
+                      "surface": "#fcf9f8",
+                      "inverse-on-surface": "#f3f0ef",
+                      "secondary-fixed": "#ffdea8",
+                      "surface-container-low": "#f6f3f2",
+                      "surface-container-high": "#ebe7e7",
+                      "error-container": "#ffdad6",
+                      "surface-bright": "#fcf9f8",
+                      "on-tertiary-container": "#fffbff",
+                      "tertiary": "#904917",
+                      "on-tertiary": "#ffffff",
+                      "on-primary-container": "#fffbff",
+                      "surface-tint": "#aa3600",
+                      "on-error-container": "#93000a",
+                      "tertiary-fixed": "#ffdbc9",
+                      "secondary-container": "#feb700",
+                      "surface-dim": "#dcd9d9",
+                      "surface-container-lowest": "#ffffff",
+                      "on-surface-variant": "#5a4139",
+                      "on-secondary-fixed": "#271900",
+                      "surface-variant": "#e5e2e1"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "base": "8px",
+                      "kiosk-gutter": "32px",
+                      "sm": "12px",
+                      "xs": "4px",
+                      "touch-target": "48px",
+                      "lg": "40px",
+                      "md": "24px",
+                      "xl": "64px"
+              },
+              "fontFamily": {
+                      "body-lg": [
+                              "Be Vietnam Pro"
+                      ],
+                      "display-lg": [
+                              "Bricolage Grotesque"
+                      ],
+                      "display-lg-mobile": [
+                              "Bricolage Grotesque"
+                      ],
+                      "headline-md": [
+                              "Bricolage Grotesque"
+                      ],
+                      "body-md": [
+                              "Be Vietnam Pro"
+                      ],
+                      "data-mono": [
+                              "JetBrains Mono"
+                      ]
+              },
+              "fontSize": {
+                      "body-lg": [
+                              "18px",
+                              {
+                                      "lineHeight": "28px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "display-lg": [
+                              "48px",
+                              {
+                                      "lineHeight": "56px",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "800"
+                              }
+                      ],
+                      "display-lg-mobile": [
+                              "36px",
+                              {
+                                      "lineHeight": "42px",
+                                      "fontWeight": "800"
+                              }
+                      ],
+                      "headline-md": [
+                              "24px",
+                              {
+                                      "lineHeight": "32px",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "body-md": [
+                              "16px",
+                              {
+                                      "lineHeight": "24px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "data-mono": [
+                              "14px",
+                              {
+                                      "lineHeight": "20px",
+                                      "fontWeight": "500"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+      </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+      </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background font-body-lg min-h-screen flex flex-col">
+<!-- Screen 1: Selection of Unit -->
+<main class="flex-grow flex flex-col md:flex-row h-screen max-h-screen overflow-hidden">
+<!-- Left Side: Map View (Visual) -->
+<div class="hidden md:block w-2/3 h-full bg-surface-variant relative">
+<div class="absolute inset-0 bg-cover bg-center" data-alt="A stylized aerial view of Recife, Brazil, showing the winding rivers and historic architecture bathed in warm, golden hour sunlight. The scene reflects a Modern Regionalist aesthetic, with deep terracotta rooftops contrasting against the bright, sunlit streets and blue waters. The lighting is high-key and inviting, creating a sense of hospitality and vibrant energy. The composition is wide, allowing for UI map markers to be overlaid." data-location="Recife, Pernambuco, Brazil" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAaKpPHGatfoRVVAqgNIPnTI5qyrlQefjx6I9IVOLOoePd7-o3pHwBzb59CJi8Bxa7IE-ukde5QcYHWBCmsb80iFyRnli-dsOI7JnVyFVREYSIapIiKMjeu5ggktwtvCA1x0IwpQrZHuzHflpMJshZn7YeH3wHVaSiIwbsaCYOpbFi2PADBQwk_a8pcuEVq04NBiaplsNU-qSCghxqhpKn7GR9pp3cMdOrWOBXgtLdjiVEKied_gxMbu-_chFdkVG7sv1PaW67GiZU5');"></div>
+<!-- Overlay for map feel -->
+<div class="absolute inset-0 bg-primary/10 mix-blend-multiply"></div>
+<!-- Map Markers (Simulated) -->
+<div class="absolute top-1/3 left-1/4 transform -translate-x-1/2 -translate-y-1/2 flex flex-col items-center">
+<div class="w-12 h-12 bg-primary rounded-full flex items-center justify-center text-on-primary shadow-lg shadow-tertiary-container/30 cursor-pointer hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-[24px]">storefront</span>
+</div>
+<span class="mt-2 font-headline-md text-headline-md text-primary-fixed-dim drop-shadow-md">Recife Centro</span>
+</div>
+<div class="absolute top-1/2 left-2/3 transform -translate-x-1/2 -translate-y-1/2 flex flex-col items-center">
+<div class="w-12 h-12 bg-surface text-primary rounded-full flex items-center justify-center shadow-lg shadow-tertiary-container/30 cursor-pointer hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-[24px]">storefront</span>
+</div>
+<span class="mt-2 font-headline-md text-headline-md text-surface drop-shadow-md">Olinda Histórica</span>
+</div>
+</div>
+<!-- Right Side: Unit List -->
+<div class="w-full md:w-1/3 h-full bg-surface-container-lowest flex flex-col shadow-[-4px_0_20px_-5px_rgba(166,53,0,0.1)] z-10 relative">
+<!-- Header -->
+<div class="bg-surface dark:bg-surface-dim w-full top-0 sticky shadow-[0_4px_20px_-5px_rgba(166,53,0,0.1)] z-20">
+<div class="flex items-center justify-between px-md py-sm w-full">
+<div class="flex items-center gap-sm">
+<div class="w-10 h-10 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center">
+<span class="material-symbols-outlined text-[24px]">map</span>
+</div>
+<h1 class="font-headline-md text-headline-md text-primary dark:text-primary-fixed-dim">Raízes do Nordeste</h1>
+</div>
+</div>
+</div>
+<!-- Content Area -->
+<div class="flex-grow overflow-y-auto p-md flex flex-col gap-lg">
+<div>
+<h2 class="font-display-lg-mobile text-display-lg-mobile text-on-background mb-xs">Escolha sua Unidade</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">Para começarmos, precisamos saber onde você está.</p>
+</div>
+<!-- Search Input -->
+<div class="relative">
+<span class="material-symbols-outlined absolute left-sm top-1/2 transform -translate-y-1/2 text-outline">search</span>
+<input class="w-full pl-xl pr-md py-sm bg-surface rounded-lg border border-outline-variant focus:border-primary focus:ring-1 focus:ring-primary text-body-lg text-on-surface placeholder:text-outline h-touch-target" placeholder="Buscar por CEP, rua ou bairro" type="text"/>
+</div>
+<!-- Unit List -->
+<div class="flex flex-col gap-sm">
+<!-- Active Unit Card -->
+<div class="bg-primary-container/10 border-2 border-primary rounded-xl p-sm flex items-center justify-between cursor-pointer hover:bg-surface-container-highest transition-colors active:scale-95">
+<div class="flex items-center gap-md">
+<div class="w-14 h-14 bg-primary text-on-primary rounded-lg flex items-center justify-center shadow-[0_4px_10px_rgba(166,53,0,0.2)]">
+<span class="material-symbols-outlined text-[32px]">storefront</span>
+</div>
+<div>
+<h3 class="font-headline-md text-headline-md text-primary">Recife Centro</h3>
+<p class="font-body-md text-body-md text-on-surface-variant flex items-center gap-xs">
+<span class="material-symbols-outlined text-[16px]">location_on</span> 1.2 km • Aberto até 22h
+                                </p>
+</div>
+</div>
+<span class="material-symbols-outlined text-primary text-[24px]">check_circle</span>
+</div>
+<!-- Inactive Unit Card -->
+<div class="bg-surface rounded-xl p-sm flex items-center justify-between cursor-pointer hover:bg-surface-container-highest transition-colors active:scale-95 shadow-sm border border-surface-container-high">
+<div class="flex items-center gap-md">
+<div class="w-14 h-14 bg-surface-container-high text-on-surface-variant rounded-lg flex items-center justify-center">
+<span class="material-symbols-outlined text-[32px]">festival</span>
+</div>
+<div>
+<h3 class="font-headline-md text-headline-md text-on-surface">Olinda Histórica</h3>
+<p class="font-body-md text-body-md text-on-surface-variant flex items-center gap-xs">
+<span class="material-symbols-outlined text-[16px]">location_on</span> 5.4 km • Aberto até 23h
+                                </p>
+</div>
+</div>
+<span class="material-symbols-outlined text-outline-variant text-[24px]">chevron_right</span>
+</div>
+</div>
+</div>
+<!-- Bottom Action -->
+<div class="p-md bg-surface-container-lowest border-t border-surface-container-high sticky bottom-0">
+<button class="w-full bg-primary text-on-primary font-headline-md text-headline-md h-touch-target rounded-lg flex items-center justify-center gap-sm shadow-[0_4px_15px_rgba(166,53,0,0.3)] hover:opacity-90 active:scale-95 transition-all">
+                    Continuar <span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</div>
+</div>
+</main>
+</body></html>

@@ -98,63 +98,67 @@ spacing:
   kiosk-gutter: 32px
 ---
 
-## Brand & Style
-This design system bridges the warmth of traditional Northeastern Brazilian culture with the precision of modern food-service technology. The system operates on a unified architectural framework:
+## Marca e Estilo
 
-1.  **Customer-Facing (Cultura):** A "Modern Regionalist" aesthetic. It utilizes heavy whitespace, organic warmth, and vibrant accents to evoke sunlight and earth. It is approachable, hospitable, and high-energy.
-2.  **Managerial (Operação):** A "Design Clean e Moderno" aesthetic. Aligned with the global design, it uses light, clean surfaces with warm accents to keep the information readable, elegant, and modern.
+O design do Raízes do Nordeste mistura a cara do Nordeste (cores quentes, clima de feira, sol e terra) com a parte mais moderna de um sistema de gestão. A ideia é que o cliente sinta acolhimento e o gerente tenha uma tela limpa pra trabalhar.
 
-The brand personality is resilient, vibrant, and efficient, prioritizing visual cleanliness and responsiveness.
+Basicamente dividimos em duas experiências:
 
-## Colors
-The palette is unified for both customers and managers:
+1. **Tela do Cliente:** visual mais quente, com bastante espaço, cores vibrantes (terracotta, amarelo). Pensado pra ser bonito e fácil de usar no celular ou no totem.
+2. **Painel do Admin:** visual limpo e claro, sem firula, focado em mostrar os dados de forma organizada. Fundo claro com detalhes em terracotta.
 
-### Main Colors (Light/Warm)
-*   **Primary (Terracotta):** `#a63500` - Used for primary actions, active states, and brand presence.
-*   **Secondary (Bronze/Yellow):** `#7c5800` - Used for highlights and secondary metrics.
-*   **Background (Bone):** `#fcf9f8` - A warm, low-glare light surface.
-*   **Surface (White/Light):** `#ffffff` / `#f6f3f2` - For clean cards, containers, and table layouts.
+## Cores
 
-## Typography
-The system uses a tri-font strategy to differentiate brand character, readability, and technical data.
+A paleta é a mesma pro app todo, só muda a intensidade dependendo da tela:
 
-*   **Headlines:** **Bricolage Grotesque** provides a quirky, rhythmic, and wood-cut feel that mirrors Northeastern craft. Use for menu items and section headers.
-*   **Body:** **Be Vietnam Pro** offers high legibility and a contemporary humanist touch for descriptions and navigation.
-*   **Data/Admin:** **JetBrains Mono** is reserved for order IDs and timestamps to ensure character distinction in list views.
+### Cores principais
+*   **Primária (Terracotta):** `#a63500` - cor da marca, usada nos botões e destaques.
+*   **Secundária (Bronze/Amarelo):** `#7c5800` - pra highlights e preços.
+*   **Fundo:** `#fcf9f8` - um branco bem leve, quase bege. Não cansa a vista.
+*   **Cards:** `#ffffff` / `#f6f3f2` - brancos quentes pros containers.
 
-## Layout & Spacing
-The layout logic shifts based on the density requirements:
+## Tipografia
 
-### Customer App & Kiosk (Low Density)
-*   **Grid:** 4-column fluid for mobile; 12-column fixed for Kiosks.
-*   **Touch Targets:** Minimum 56px height for all interactive elements to accommodate fast-paced ordering.
-*   **Padding:** Generous `lg` (40px) vertical spacing between food categories.
+Usamos 3 fontes diferentes, cada uma com um propósito:
 
-### Managerial Dashboard (High Density)
-*   **Grid:** 12-column fluid.
-*   **Density:** Compact spacing (`sm` - 12px) to maximize information density on one screen. 
-*   **Reflow:** Admin panels use a clean grid layout to keep order lists and metrics cards clearly readable.
+*   **Bricolage Grotesque** — pros títulos e nomes de pratos. Tem um estilo mais artesanal que combina com a temática nordestina.
+*   **Be Vietnam Pro** — pro texto normal, descrições e navegação. Boa leitura.
+*   **JetBrains Mono** — só pros IDs de pedido e horários. É monospace, então fica fácil de ler números.
 
-## Elevation & Depth
-*   Uses **Ambient Shadows** and **Clean Borders**. Elements have soft, warm-tinted shadows or 1px subtle borders (like `border-surface-container-high`) to feel clean and structured. No dark interfaces or neon accents.
+## Layout e Espaçamento
 
-## Shapes
-*   **Standard Radius:** 0.5rem (8px). This is the default for buttons, cards, and input fields.
-*   **Large Radius:** 1.5rem (24px). Reserved for top-level containers in the Customer App.
+O layout muda dependendo de onde o cliente tá usando:
 
-## Components
+### App do cliente e Totem
+*   Grid de 4 colunas no celular, 12 no totem.
+*   Botões grandes (mínimo 56px) pra facilitar o toque rápido.
+*   Bastante espaço entre as categorias (40px).
 
-### Buttons
-*   **Customer:** Large, filled Terracotta buttons with white text. 24px internal padding.
-*   **Admin:** Large, filled Terracotta buttons or clean outlined buttons using the primary colors.
+### Painel do Admin
+*   Grid de 12 colunas.
+*   Espaçamento menor (12px) pra caber mais informação na tela.
+*   Tabela de pedidos com linhas alternando cor pra facilitar a leitura.
+
+## Sombras e Bordas
+*   Sombras suaves e bordas de 1px (`border-surface-container-high`). O visual é limpo, sem nada escuro ou neon.
+
+## Arredondamento
+*   Padrão: 8px nos botões, cards e inputs.
+*   Containers maiores do app do cliente: 24px.
+
+## Componentes
+
+### Botões
+*   **Cliente:** botão grande terracotta com texto branco. Padding de 24px.
+*   **Admin:** botão terracotta ou botão outline com borda da cor primária.
 
 ### Cards
-*   **Product Card (Customer):** Image-led, with the price floating in a Sun Yellow circle.
-*   **Order Card (Admin):** Clean card with light background, clear border, and text labels.
+*   **Card de Produto:** imagem na esquerda, info na direita, preço em destaque.
+*   **Card de Pedido (Admin):** fundo claro, borda sutil, labels de texto.
 
-### Input Fields
-*   **Customer:** Inset fields with a warm-gray border and 16px padding.
-*   **Admin:** Inset fields with a light-gray border.
+### Campos de Input
+*   **Cliente:** borda cinza quente, padding de 16px.
+*   **Admin:** borda cinza clara.
 
-### Lists
-*   **Admin Dashboard:** Alternating row colors (zebra striping) using `#ffffff` and `#fbfaf9` for maximum scanability.
+### Listas
+*   **Tabela do Admin:** linhas alternando entre `#ffffff` e `#fbfaf9` (zebra) pra facilitar a leitura.
